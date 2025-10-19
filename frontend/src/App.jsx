@@ -15,6 +15,7 @@ import MyStudents from './pages/teacher/MyStudents';
 import AdminSubstitutions from './pages/admin/Substitutions';
 import TeacherSubstitutions from './pages/teacher/Substitutions';
 import Footer from './components/ui/Footer';
+import PrivacyPolicy from './components/ui/PrivacyPolicy';
 import './App.css';
 import logo from './logo.svg'; 
 import Chatbot from './components/Chatbot';
@@ -208,6 +209,8 @@ function App() {
     <>
       <Chatbot />
       <Routes>
+        {/* privacy policy routes */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         {/* Public routes */}
         <Route path="/login" element={<Login />} />
 

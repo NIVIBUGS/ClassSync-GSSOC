@@ -1,4 +1,8 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
 function Footer() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <footer className="w-full bg-white/80 backdrop-blur-sm shadow-inner mt-20 px-6">
       <div className="w-full px-8 py-8 sm:px-12 lg:px-16 xl:px-20 flex flex-col lg:flex-row justify-between items-center text-sm text-gray-600 space-y-4 lg:space-y-0">
@@ -6,8 +10,10 @@ function Footer() {
         
         <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-indigo-600 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-indigo-600 transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-indigo-600 transition-colors">Privacy Policy</Link>
+            <Link to="" className="hover:text-indigo-600 transition-colors">Terms of Service</Link>
+
+             
           </div>
           
           <div className="flex items-center space-x-2">
@@ -26,6 +32,8 @@ function Footer() {
         </div>
       </div>
     </footer>
+
+    
   );
 }
 
