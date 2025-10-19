@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import TermsOfService from "./TermsOfService";
 function Footer() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <>
     <footer className="w-full bg-white/80 backdrop-blur-sm shadow-inner mt-20 px-6">
       <div className="w-full px-8 py-8 sm:px-12 lg:px-16 xl:px-20 flex flex-col lg:flex-row justify-between items-center text-sm text-gray-600 space-y-4 lg:space-y-0">
         <p>&copy; 2025 ClassSync. All rights reserved.</p>
@@ -11,8 +13,14 @@ function Footer() {
         <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
           <div className="flex space-x-4">
             <Link to="/privacy-policy" className="hover:text-indigo-600 transition-colors">Privacy Policy</Link>
-            <Link to="" className="hover:text-indigo-600 transition-colors">Terms of Service</Link>
-
+            {/* <Link to="" className="hover:text-indigo-600 transition-colors">Terms of Service</Link> */}
+            {/* 👉 Modal open button */}
+              <button
+                onClick={() => setIsOpen(true)}
+                className="hover:text-indigo-600 transition-colors"
+              >
+                Terms of Service
+              </button>
              
           </div>
           
@@ -33,7 +41,9 @@ function Footer() {
       </div>
     </footer>
 
-    
+      {/* Modal imported from another component */}
+      {isOpen && <TermsOfService setIsOpen={setIsOpen} />}
+    </>
   );
 }
 
